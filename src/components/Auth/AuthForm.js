@@ -33,7 +33,8 @@ const AuthForm = () => {
     const auth = getAuth()
     signInWithPopup(auth, GoogleProvider).then(res => {
       const GoogleUser = res.user
-      console.log(GoogleUser.displayName)
+      console.log(res._tokenResponse.idToken)
+      console.log(res,'looking for inspires in ')
 
    
       //allow the user to login with context
@@ -41,7 +42,13 @@ const AuthForm = () => {
       setIsfederatedSignin(true)
       setUser(GoogleUser.displayName)
       console.log('login in with google',user)
+     
+
+        const expirationTime = new Date(new Date().getTime() + ( res._tokenResponse.oauthExpireIn * 100))
+      AuthCtx.login(res._tokenResponse.idToken, expirationTime.toISOString());
+   
       history.replace('/')
+      alert(' welcome ' + GoogleUser.displayName)
 
     }
 

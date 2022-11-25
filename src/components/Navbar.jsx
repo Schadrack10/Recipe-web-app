@@ -42,7 +42,7 @@ const Navbar = () => {
          </Box>
          <Box sx={{...navStyles.linkContainer}}>
 
-          {  AuthCtx.isLoggedIn && <NavLink  style={navStyles.link}  to="/">Home</NavLink>}
+          {  AuthCtx.isLoggedIn &&  <NavLink  style={navStyles.link}  to="/">Home</NavLink>}
            {  AuthCtx.isLoggedIn &&  <NavLink  style={navStyles.link}  to="/fav">Favourites</NavLink>}
             {  AuthCtx.isLoggedIn &&   <NavLink  style={navStyles.link}  to="/more">Add recipe</NavLink>}
             {AuthCtx.isLoggedIn  ? <Button sx={{ color:'#fff'}} variant="outlined" onClick={()=>logoutHandler()}>Logout</Button>:<NavLink  style={{...navStyles.link, marginLeft:'500px'}}  to="/auth">Login</NavLink>}

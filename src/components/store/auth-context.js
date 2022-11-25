@@ -175,6 +175,8 @@ export const AuthContextProvider = (props) => {
         const recipeDoc = doc(db, "recipies", id)
         const newDuration = { recipeDuration: recipeDuration  + 1}
         await updateDoc(recipeDoc, newDuration)
+        ForceReload()
+
         // setLoading(false)
     }
 
@@ -183,6 +185,7 @@ export const AuthContextProvider = (props) => {
         const recipeDoc = doc(db, "recipies", id)
         setLoading(true)
         await deleteDoc(recipeDoc)
+        ForceReload()
         setLoading(false)
     }
 
