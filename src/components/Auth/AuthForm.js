@@ -164,7 +164,7 @@ const AuthForm = () => {
         </div>
         <div className={classes.control}>
           <label htmlFor='password'>Your Password</label>
-          <input className={classes.input} type='password' id='password' placeholder="Enter your email" required ref={passwordRef} />
+          <input className={classes.input} type='password' id='password' placeholder="Enter your password" required ref={passwordRef} />
         </div>
         <div className={classes.actions}>
           {!isLoading && <button style={{ display: 'flex', gap: 5, justifyContent:'space-between' }} >{isLogin ?
