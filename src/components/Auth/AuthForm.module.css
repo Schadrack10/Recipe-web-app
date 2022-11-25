@@ -1,0 +1,86 @@
+.auth {
+  margin: 3rem auto;
+  padding: 0 10px;
+  width: 95%;
+  max-width: 30rem;
+  border-radius: 6px;
+  background-color: #030a18;
+  box-shadow: 0  7px 6px rgba(0, 0, 0, 0.9);
+  padding: 1.5rem;
+  text-align: center;
+}
+
+.auth h1 {
+  text-align: center;
+  color: white;
+}
+
+
+
+.control {
+  margin-bottom: 1.5rem;
+}
+
+.control label {
+  display: block;
+  font-weight: lighter;
+  text-align: start;
+  color: white;
+  font-weight: bold;
+  margin-bottom: 0.5rem;
+  margin-left: 25px;
+}
+
+.control input {
+  font: inherit;
+  background-color: #f1e1fc;
+  color: #38015c;
+  border-radius: 4px;
+  border: 1px solid white;
+  width: 100%;
+  text-align: left;
+  padding: 0.25rem;
+
+}
+
+.actions {
+  margin-top: 2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.actions button {
+  cursor: pointer;
+  font: inherit;
+  color: white;
+  background-color: #08112400;
+  border:none;
+  border-radius: 4px;
+  padding: 0.5rem 2.5rem;
+}
+
+.actions button:hover {
+  background-color: #fff;
+  color: #000;
+  /* border-color: #873abb; */
+}
+
+.actions .toggle {
+  margin-top: 1rem;
+  background-color: transparent;
+  color: #fff;
+  border: none;
+  padding: 0.15rem 1.5rem;
+}
+
+.actions .toggle:hover {
+  background-color: transparent;
+  color: #fff;
+}
+
+.input{
+ padding: 8px 20px!important;
+ width: 80%!important;
+  
+}

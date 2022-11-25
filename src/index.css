@@ -5,9 +5,25 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  background-color: #030a18;
+  padding: 0 30px;
 }
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
+}
+
+.recipeComp{
+    height: 100px;
+}
+
+*{
+  margin: 0;
+}
+input::placeholder{
+  color: #002F5A;
+  font-size: 18px;
+  
+  
 }
