@@ -143,6 +143,9 @@ export const AuthContextProvider = (props) => {
 
     const handleCreate = async (e) => {
         e.preventDefault()
+
+   if (name, description, img, duration) {
+
        setLoading(true)
         await addDoc(recipiesCollectionRef, {
             recipeName: name,
@@ -163,7 +166,7 @@ export const AuthContextProvider = (props) => {
             recipeDuration: duration
 
         }
-        if (name, description, img, duration) {
+       
             console.log(clientData)
         }
 

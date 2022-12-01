@@ -1,5 +1,7 @@
 import React from 'react';
-import ReactDOM from 'react-dom/client';
+import ReactDOM from 'react-dom/client'; //original import
+// import ReactDOM from 'react-dom'; //added import
+
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
@@ -8,6 +10,7 @@ import { AuthContextProvider } from './components/store/auth-context';
 import {getFirestore, collection, addDoc} from 'firebase/firestore'
 import { initializeApp } from "firebase/app";
 import { BrowserRouter,Route, Switch, Redirect } from 'react-router-dom'
+import {createRoot} from 'react-dom/client';
 
 
 // Import the functions you need from the SDKs you need
@@ -34,6 +37,11 @@ export const db =  getFirestore(app)
 
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
+
+// const rootElement = document.getElementById('root');
+// const root = createRoot(rootElement);
+
+
 root.render(
  <BrowserRouter>
 
@@ -50,3 +58,8 @@ root.render(
 // to log results (for example: reportWebVitals(console.log))
 // or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
 reportWebVitals();
+
+
+
+
+// ReactDOM.render(<App />, document.getElementById('root')); //render method

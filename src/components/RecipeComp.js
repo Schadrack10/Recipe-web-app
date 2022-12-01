@@ -20,6 +20,9 @@ import EditModal from './modals/EditModal';
       handleEditClose
       }  =useContext(AuthContext)
 
+  const AuthCtx =  useContext(AuthContext)
+
+
     return(
 
         <div style={{...styles.container}}>
@@ -33,24 +36,27 @@ import EditModal from './modals/EditModal';
                   <h5>{recipe.recipeDuration} hrs to prepare</h5>
             </div>
             <div style={{...styles.half, justifyContent:"space-around" }}>
-                   <Button onClick={()=>{
-                    setRecipeDetails({
-                      name:recipe.recipeName,
-                      img:recipe.recipeImg,
-                      description:recipe.recipeDescription,
-                      duration:recipe.recipeDuration
-                    })
-                    setViewOpen(true)
-                    }} sx={{width:'150px', height:'28px'}} variant="contained" color="success">
-                     view recipe
-                 </Button>
-                  <Button onClick={()=>updateRecipe(recipe.id,recipe.recipeDuration ) }
-                      sx={{width:'150px',height:'28px'}}  variant="contained" color="warning">
-                     Add durat.. +1
-                 </Button>
-                 <Button onClick={()=>deleteRecipies(recipe.id)} sx={{width:'150px',height:'28px'}} variant="contained" color="error">
-                     delete recipe
-                 </Button>
+                   
+                 { AuthCtx.isLoggedIn && <Button onClick={()=>{
+                                        setRecipeDetails({
+                                       name:recipe.recipeName,
+                                       img:recipe.recipeImg,
+                                       description:recipe.recipeDescription,
+                                       duration:recipe.recipeDuration
+                                     })
+                                     setViewOpen(true)
+                                     }} sx={{width:'150px', height:'28px'}} variant="contained" color="success">
+                                      view recipe
+                                  </Button>
+                 }
+
+                { AuthCtx.isLoggedIn && <Button onClick={()=>updateRecipe(recipe.id,recipe.recipeDuration ) }
+                                      sx={{width:'150px',height:'28px'}}  variant="contained" color="warning">
+                                     Add durat.. +1
+                                 </Button>}
+                { AuthCtx.isLoggedIn &&     <Button onClick={()=>deleteRecipies(recipe.id)} sx={{width:'150px',height:'28px'}} variant="contained" color="error">
+                                     delete recipe
+                                 </Button>}
             </div>
             <ViewRecipe recipe={recipe}  />
             <EditModal recipe={recipe}  />
