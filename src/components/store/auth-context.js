@@ -81,7 +81,7 @@ export const AuthContextProvider = (props) => {
 
     })
 
-    const [favouriteRecipies, setFavouriteRecipies] = useState([{name:'test',duration:'testduration'},{name:'test2',duration:'testduration'}])
+    const [favouriteRecipies, setFavouriteRecipies] = useState([])
   const history =  useHistory()
     
 

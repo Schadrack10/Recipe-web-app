@@ -27,9 +27,7 @@ import EditModal from './modals/EditModal';
 
         <div style={{...styles.container}}>
               
-            <div style={{...styles.half}}>
               <img style={styles.img} src={recipe.recipeImg} />
-            </div>
             <div style={{...styles.half,gap:10}}>
                   <h2>{recipe.recipeName}</h2>
                   <h4 style={{color:''}}>{recipe.recipeDescription}</h4>
@@ -54,7 +52,7 @@ import EditModal from './modals/EditModal';
                                       sx={{width:'150px',height:'28px'}}  variant="contained" color="warning">
                                      Add durat.. +1
                                  </Button>}
-                { AuthCtx.isLoggedIn &&     <Button onClick={()=>deleteRecipies(recipe.id)} sx={{width:'150px',height:'28px'}} variant="contained" color="error">
+                { AuthCtx.isLoggedIn &&  <Button onClick={()=>deleteRecipies(recipe.id)} sx={{width:'150px',height:'28px'}} variant="contained" color="error">
                                      delete recipe
                                  </Button>}
             </div>
@@ -94,8 +92,12 @@ const styles = {
       
 	},
 	img:{
-       width:'100%',
+       width:'200px',
+       // border:'1px solid red',
        height:'100%',
-       objectFit:'contain'
+       objectFit:'cover',
+       borderRadius:'inherit',
+       borderRadiusRight:'none',
+       filter:'brightness(0.5)'
 	}
 }

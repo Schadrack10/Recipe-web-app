@@ -53,7 +53,7 @@ const AddRecipe = () => {
             <input style={{ ...styles.input }} type="text" placeholder="what is your recipe named.." name="name" value={name} onChange={(e) => setName(e.target.value)} />
             <label>Recipe description</label>
 
-            <input style={{ ...styles.input }} type="text" placeholder="describe the recipe ingredients" name="name" value={description} onChange={(e) => setDescription(e.target.value)} />
+            <input min={'0'} style={{ ...styles.input }} type="text" placeholder="describe the recipe ingredients" name="name" value={description} onChange={(e) => setDescription(e.target.value)} />
             <label>Recipe duration</label>
 
             <input style={{ ...styles.input, width: '30%' }} type="number" placeholder="how long does it take" name="duration" value={duration} onChange={(e) => setDuration(e.target.value)} />
