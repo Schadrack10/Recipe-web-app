@@ -7,6 +7,8 @@ import Button from '@mui/material/Button';
 import Typography from '@mui/material/Typography';
 import AuthContext from '../store/auth-context';
 import { useState, useContext } from 'react';
+import { useHistory, Link } from 'react-router-dom';
+
 
 const style = {
   position: 'absolute',
@@ -31,6 +33,8 @@ const style = {
 export default function ViewRecipe() {
   // const handleOpen = () => setOpen(true);
   // const handleClose = () => setOpen(false);
+
+  const history =  useHistory()
 
   const { 
     editOpen,
@@ -70,39 +74,12 @@ export default function ViewRecipe() {
 
 const handleFavourites  = (name, description, duration,image)=>{
 
-  let RecipeNAME = recipeDetails.name
-  let elements = null
-  // michee => {name:michh}
-   
-    // for(let i = 0 ; i < favouriteRecipies.length;i++){
-
-
-        
-    //      if( !favouriteRecipies[i].includes(RecipeNAME)){
-
-    //         setFavouriteRecipies([...favouriteRecipies,{name:name, description:description, duration:duration,image:image}])
-    //       }
-
-        
-
-    // }
-  
-  // console.log(elements)
-
-    // if(!favouriteRecipies.includes(RecipeNAME)){
-
-    //  setFavouriteRecipies([...favouriteRecipies,{name:name, description:description, duration:duration,image:image}])
-    // }
-
-    
-
-
-    // console.log(RecipeNAME)
-
-
-   setFavouriteRecipies([...favouriteRecipies,{name:name, description:description, duration:duration,image:image}])
-
-
+  let accept = window.confirm(`do you want to add ${name} to favourite ?`)
+ 
+    if(accept){
+       setFavouriteRecipies([...favouriteRecipies,{name:name, description:description, duration:duration,image:image}])
+        history.replace('/fav')
+    }
 }
 
 

@@ -62,7 +62,7 @@ const AuthForm = () => {
          const auth = getAuth()
         signInWithPopup(auth, FacebookProvider).then(res =>{
           const facebookUser = res.user
-          console.log(facebookUser.displayName)
+          console.log()
 
 
         //allow the user to login

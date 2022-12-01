@@ -15,6 +15,7 @@ const AuthContext = React.createContext({
     isLoggedIn: false,
     login: (token) => { },
     logout: () => { },
+    // favouriteRecipies:[]
 
 })
 
@@ -81,7 +82,7 @@ export const AuthContextProvider = (props) => {
 
     })
 
-    const [favouriteRecipies, setFavouriteRecipies] = useState([{name:'test',duration:'testduration'},{name:'test2',duration:'testduration'}])
+    const [favouriteRecipies, setFavouriteRecipies] = useState([])
   const history =  useHistory()
     
 
@@ -143,6 +144,9 @@ export const AuthContextProvider = (props) => {
 
     const handleCreate = async (e) => {
         e.preventDefault()
+
+   if (name, description, img, duration) {
+
        setLoading(true)
         await addDoc(recipiesCollectionRef, {
             recipeName: name,
@@ -163,7 +167,7 @@ export const AuthContextProvider = (props) => {
             recipeDuration: duration
 
         }
-        if (name, description, img, duration) {
+       
             console.log(clientData)
         }
 
