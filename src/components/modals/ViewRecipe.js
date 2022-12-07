@@ -37,10 +37,10 @@ export default function ViewRecipe() {
   const history =  useHistory()
 
   const { 
-    editOpen,
-    setEditOpen,
-    viewOpen,
-    setViewOpen,
+      editOpen,
+      setEditOpen,
+      viewOpen,
+      setViewOpen,
       //recipe states
       name,
       setName,
@@ -68,7 +68,7 @@ export default function ViewRecipe() {
       recipeDetails,
       setRecipeDetails,
       favouriteRecipies,
-         setFavouriteRecipies
+      setFavouriteRecipies
     }  =useContext(AuthContext)
  
 

@@ -1,6 +1,6 @@
 import React from 'react';
-import ReactDOM from 'react-dom/client'; //original import
-// import ReactDOM from 'react-dom'; //added import
+// import ReactDOM from 'react-dom/client'; //original import
+ import ReactDOM from 'react-dom'; //added import
 
 import './index.css';
 import App from './App';
@@ -10,7 +10,7 @@ import { AuthContextProvider } from './components/store/auth-context';
 import {getFirestore, collection, addDoc} from 'firebase/firestore'
 import { initializeApp } from "firebase/app";
 import { BrowserRouter,Route, Switch, Redirect } from 'react-router-dom'
-import {createRoot} from 'react-dom/client';
+// import {createRoot} from 'react-dom/client';
 
 
 // Import the functions you need from the SDKs you need
@@ -44,7 +44,6 @@ const root = ReactDOM.createRoot(document.getElementById('root'));
 
 root.render(
  <BrowserRouter>
-
   <AuthContextProvider>
     <React.StrictMode>
       <App />
@@ -52,6 +51,29 @@ root.render(
   </AuthContextProvider>
   </BrowserRouter>
 );
+
+
+
+// ReactDOM.createRoot(document.getElementById('root')).render(
+//   <BrowserRouter>
+//   <AuthContextProvider>
+//     <React.StrictMode>
+//       <App />
+//     </React.StrictMode>
+//   </AuthContextProvider>
+//   </BrowserRouter>
+// );
+ // ReactDOM.render(
+ //    <BrowserRouter>
+ //  <AuthContextProvider>
+ //    <React.StrictMode>
+ //      <App />
+ //    </React.StrictMode>
+ //  </AuthContextProvider>
+ //  </BrowserRouter>
+ //  , document.getElementById('root'))
+
+
 
 
 // If you want to start measuring performance in your app, pass a function

@@ -1,8 +1,10 @@
 import { render, screen } from '@testing-library/react';
+import AuthForm from './components/Auth/AuthForm'
+// import AuthForm
 import App from './App';
 
 test('renders learn react link', () => {
-  render(<App />);
-  const linkElement = screen.getByText(/learn react/i);
-  expect(linkElement).toBeInTheDocument();
+  render(<AuthForm />);
+  const emailLabelElement = screen.getByText(/Your Email/i);
+  expect(emailLabelElement).toBeInTheDocument();
 });

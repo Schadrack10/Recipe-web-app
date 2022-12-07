@@ -1,12 +1,15 @@
 import React from 'react'
 import {useContext} from 'react'
 import AuthContext from '../components/store/auth-context'
+import { useHistory, Link } from 'react-router-dom';
+
 
 
 const Profile = () => {
 
 
 const {favouriteRecipies,setFavouriteRecipies} =  useContext(AuthContext)
+
 
 
 
