@@ -65,7 +65,7 @@ const Recipes = () => {
 
 
       <div style={{ ...styles.compContainer }}>
-        <input placeholder={'find your recipe?'} style={styles.input} value={filterTerm} onChange={(e) => setFilterTerm(e.target.value)} />
+        <input placeholder={'find your recipe?'} style={styles.input} value={filterTerm} onChange={(e) => setFilterTerm(e.target.value.trim())} />
 
         {loading ?
           <Loading />

@@ -50,16 +50,16 @@ const AddRecipe = () => {
                 </Typography>
             </Box>
             <label>Recipe name</label>
-            <input style={{ ...styles.input }} type="text" placeholder="what is your recipe named.." name="name" value={name} onChange={(e) => setName(e.target.value)} />
+            <input style={{ ...styles.input }} type="text" placeholder="what is your recipe named.." name="name" value={name} onChange={(e) => setName(e.target.value.trim())} />
             <label>Recipe description</label>
 
-            <input min={'0'} style={{ ...styles.input }} type="text" placeholder="describe the recipe ingredients" name="name" value={description} onChange={(e) => setDescription(e.target.value)} />
+            <input min={'0'} style={{ ...styles.input }} type="text" placeholder="describe the recipe ingredients" name="name" value={description} onChange={(e) => setDescription(e.target.value.trim())} />
             <label>Recipe duration</label>
 
-            <input style={{ ...styles.input, width: '30%' }} type="number" placeholder="how long does it take" name="duration" value={duration} onChange={(e) => setDuration(e.target.value)} />
+            <input style={{ ...styles.input, width: '30%' }} type="number" placeholder="how long does it take" name="duration" value={duration} onChange={(e) => setDuration(e.target.value.trim())} />
             <label>Recipe image</label>
 
-            <input style={{ ...styles.input }} type="text" placeholder="eg. https://www.imgae.url" name="name" value={img} onChange={(e) => setImg(e.target.value)} />
+            <input style={{ ...styles.input }} type="text" placeholder="eg. https://www.imgae.url" name="name" value={img} onChange={(e) => setImg(e.target.value.trim())} />
             <Button variant="contained" color="warning" style={{ padding: '10px' }} type="submit">
                 Create recipe
             </Button>
