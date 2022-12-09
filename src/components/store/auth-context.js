@@ -71,28 +71,28 @@ export const AuthContextProvider = (props) => {
     const [description, setDescription] = useState('')
     const [duration, setDuration] = useState('')
     const [loading, setLoading] = useState(false)
-   
-    const ForceReload = ()=> window.location.reload();
 
-    const [recipeDetails ,setRecipeDetails] =  useState({
-        name:'',
-        description:'',
-        img:'',
-        duration:0
+    const ForceReload = () => window.location.reload();
+
+    const [recipeDetails, setRecipeDetails] = useState({
+        name: '',
+        description: '',
+        img: '',
+        duration: 0
 
     })
 
     const [favouriteRecipies, setFavouriteRecipies] = useState([])
-    const history =  useHistory()
-    
+    const history = useHistory()
 
 
 
 
-   //modals
-   const [editOpen, setEditOpen] = React.useState(false);
-   const [viewOpen, setViewOpen] = React.useState(false);
-   const [EditValue, setEditValue] = React.useState(0);
+
+    //modals
+    const [editOpen, setEditOpen] = React.useState(false);
+    const [viewOpen, setViewOpen] = React.useState(false);
+    const [EditValue, setEditValue] = React.useState(0);
 
 
 
@@ -145,29 +145,29 @@ export const AuthContextProvider = (props) => {
     const handleCreate = async (e) => {
         e.preventDefault()
 
-   if (name, description, img, duration) {
+        if (name, description, img, duration) {
 
-       setLoading(true)
-        await addDoc(recipiesCollectionRef, {
-            recipeName: name,
-            recipeImg: img,
-            recipeDescription: description,
-            recipeDuration: Number(duration)
+            setLoading(true)
+            await addDoc(recipiesCollectionRef, {
+                recipeName: name,
+                recipeImg: img,
+                recipeDescription: description,
+                recipeDuration: Number(duration)
 
-        })
+            })
 
-        history.replace('/')
-        ForceReload()
-        setLoading(false)
+            history.replace('/')
+            ForceReload()
+            setLoading(false)
 
-        const clientData = {
-            recipeName: name,
-            recipeDescription: description,
-            recipeImg: img,
-            recipeDuration: duration
+            const clientData = {
+                recipeName: name,
+                recipeDescription: description,
+                recipeImg: img,
+                recipeDuration: duration
 
-        }
-       
+            }
+
             console.log(clientData)
         }
 
@@ -177,7 +177,7 @@ export const AuthContextProvider = (props) => {
     const updateRecipe = async (id, recipeDuration) => {
         // setLoading(true)
         const recipeDoc = doc(db, "recipies", id)
-        const newDuration = { recipeDuration: recipeDuration  + 1}
+        const newDuration = { recipeDuration: recipeDuration + 1 }
         await updateDoc(recipeDoc, newDuration)
         ForceReload()
 
@@ -250,15 +250,15 @@ export const AuthContextProvider = (props) => {
         //modal
         editOpen,
         setEditOpen,
-       recipeDetails,
-       setRecipeDetails,
-       viewOpen,
+        recipeDetails,
+        setRecipeDetails,
+        viewOpen,
         setViewOpen,
-         EditValue,
-         setEditValue,
-         //fav
-         favouriteRecipies,
-         setFavouriteRecipies
+        EditValue,
+        setEditValue,
+        //fav
+        favouriteRecipies,
+        setFavouriteRecipies
 
 
     }

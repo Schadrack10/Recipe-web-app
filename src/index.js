@@ -1,15 +1,15 @@
 import React from 'react';
 // import ReactDOM from 'react-dom/client'; //original import
- import ReactDOM from 'react-dom'; //added import
+import ReactDOM from 'react-dom/client'; //added import
 
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 import Layout from './components/Layout';
 import { AuthContextProvider } from './components/store/auth-context';
-import {getFirestore, collection, addDoc} from 'firebase/firestore'
+import { getFirestore, collection, addDoc } from 'firebase/firestore'
 import { initializeApp } from "firebase/app";
-import { BrowserRouter,Route, Switch, Redirect } from 'react-router-dom'
+import { BrowserRouter, Route, Switch, Redirect } from 'react-router-dom'
 // import {createRoot} from 'react-dom/client';
 
 
@@ -30,7 +30,7 @@ const firebaseConfig = {
 
 // Initialize Firebase
 const app = initializeApp(firebaseConfig);
-export const db =  getFirestore(app)
+export const db = getFirestore(app)
 
 
 
@@ -43,12 +43,12 @@ const root = ReactDOM.createRoot(document.getElementById('root'));
 
 
 root.render(
- <BrowserRouter>
-  <AuthContextProvider>
-    <React.StrictMode>
-      <App />
-    </React.StrictMode>
-  </AuthContextProvider>
+  <BrowserRouter>
+    <AuthContextProvider>
+      <React.StrictMode>
+        <App />
+      </React.StrictMode>
+    </AuthContextProvider>
   </BrowserRouter>
 );
 
@@ -63,15 +63,15 @@ root.render(
 //   </AuthContextProvider>
 //   </BrowserRouter>
 // );
- // ReactDOM.render(
- //    <BrowserRouter>
- //  <AuthContextProvider>
- //    <React.StrictMode>
- //      <App />
- //    </React.StrictMode>
- //  </AuthContextProvider>
- //  </BrowserRouter>
- //  , document.getElementById('root'))
+// ReactDOM.render(
+//    <BrowserRouter>
+//  <AuthContextProvider>
+//    <React.StrictMode>
+//      <App />
+//    </React.StrictMode>
+//  </AuthContextProvider>
+//  </BrowserRouter>
+//  , document.getElementById('root'))
 
 
 
