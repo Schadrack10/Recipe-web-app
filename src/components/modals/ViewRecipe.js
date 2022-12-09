@@ -17,7 +17,7 @@ const style = {
   transform: 'translate(-50%, -50%)',
   width: '50%',
   // height:'50%',
-  bgcolor: '#000',
+  bgcolor: '#01101f',
   color:'#fff',
   border: '2px solid #000',
   boxShadow: 24,
@@ -109,12 +109,13 @@ const handleFavourites  = (name, description, duration,image)=>{
               </div>
               <Typography variant="h3">
                 {recipeDetails.name}
-                   
-                   
               </Typography>
-             <Typography variant="p" color="#fff" sx={{mt:2,mb:2}}>
+              <Typography variant="p" color="#fff" sx={{mt:2,mb:1.5}}>
                 {recipeDetails.description}
-                </Typography>
+              </Typography>
+              <Typography variant="p">
+                  It will take about {recipeDetails.duration} hrs to prepare the meal
+              </Typography>
                 <div>
             <Button 
             onClick={()=>setViewOpen(false)} 
@@ -133,11 +134,7 @@ const handleFavourites  = (name, description, duration,image)=>{
             >
                 Add to favourite
             </Button>
-                </div>
-
-          
-
-       
+            </div>       
           </Box>
              
         </Fade>

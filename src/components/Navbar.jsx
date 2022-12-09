@@ -7,6 +7,7 @@ import { useHistory, Link } from 'react-router-dom';
 // import 'bootstrap/dist/css/bootsrap.min.css'
 import AuthContext from './store/auth-context';
 import Button from '@mui/material/Button';
+import { display } from '@mui/system';
 
 
 
@@ -20,7 +21,7 @@ const Navbar = () => {
     // }
 
   const AuthCtx = useContext(AuthContext);
-  const {isfederatedSignin, setIsfederatedSignin, user , setUser} = useContext(AuthContext);
+  const {isfederatedSignin, setIsfederatedSignin, user , setUser, favouriteRecipies} = useContext(AuthContext);
   const history =  useHistory()
 
   const isLoggedIn = AuthCtx.isLoggedIn;
@@ -42,10 +43,10 @@ const Navbar = () => {
          </Box>
          <Box sx={{...navStyles.linkContainer}}>
 
-          {  AuthCtx.isLoggedIn &&  <NavLink  style={navStyles.link}  to="/">Home</NavLink>}
-           {  AuthCtx.isLoggedIn &&  <NavLink  style={navStyles.link}  to="/fav">Favourites</NavLink>}
-            {  AuthCtx.isLoggedIn &&   <NavLink  style={navStyles.link}  to="/more">Add recipe</NavLink>}
-            {AuthCtx.isLoggedIn  ? <Button sx={{ color:'#fff'}} variant="outlined" onClick={()=>logoutHandler()}>Logout</Button>:<NavLink  style={{...navStyles.link, marginLeft:'500px'}}  to="/auth">Login</NavLink>}
+          {  AuthCtx.isLoggedIn &&   <NavLink  style={navStyles.link}  to="/">Home</NavLink>}
+           {  AuthCtx.isLoggedIn &&  <NavLink  style={navStyles.link}  to="/fav">Favourites <span style={navStyles.numb}>{favouriteRecipies.length}</span></NavLink>}
+            {  AuthCtx.isLoggedIn && <NavLink  style={navStyles.link}  to="/more">Add recipe</NavLink>}
+            {AuthCtx.isLoggedIn  ?  <Button sx={{ color:'#fff'}} variant="outlined" onClick={()=>logoutHandler()}>Logout</Button>:<NavLink  style={{...navStyles.link, marginLeft:'500px'}}  to="/auth">Login</NavLink>}
          </Box>
     </Box>
   )
@@ -76,6 +77,24 @@ const navStyles = {
     textDecoration:'none',
     fontWeight:'bold',
     fontSize:'16px',
+    
+  },
+  numb:{
+    border:'1px solid #fff',
+    padding:'3px',
+    borderRadius:"100%",
+    color:'red',
+    fontSize:"10px",
+   
+    // top:"10",
+    width:"10px",
+    height:"10px",
+    textAlign:"center",
+    // display:'flex',
+    // alignItems:'center',
+    // justifyContent:'center',
+    position:'absolute',
+    // marginTop:2
     
   }
 
